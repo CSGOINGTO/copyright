@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="default-package" extends="struts-default">
+        <!-- action for root -->
+        <action name="root_action" class="rootAction"/>
+        <action name="root_chanagepsd_action" class="rootAction" method="changePasswordFunction"/>
+        <action name="root_logout" class="rootAction" method="Logoutfunction"/>
+        <!-- Action for File -->
+        <action name="file_action" class="fileAction" method="Upload"/>
+        <action name="file_action2" class="fileAction" method="Download"/>
+        <action name="upload_image_Masterpiece" class="fileAction" method="addImageToMasterprice"/>
+        <action name="upload_image_Task" class="fileAction" method="addImageToTask"/>
+        <action name="upload_video_Masterpiece" class="fileAction" method="addVidoToMasterprise"/>
+        <action name="get_files" class="fileAction" method="getMasterpieceBase64"/>
+        <!-- Action for Designer -->
+        <action name="designer_add_action" class="designerAction" method="addNewDesigner"/>
+        <action name="designer_login_action" class="designerAction" method="loginDesigner"/>
+        <action name="designer_login_email_action" class="designerAction" method="loginDesignerByEmail"/>
+        <action name="designer_change_password" class="designerAction" method="changeUserPassword"/>
+        <action name="designer_info_update" class="designerAction" method="changeUserInfo"/>
+        <action name="designer_extend_info_update" class="designerAction" method="changeExtendUserInfo"/>
+        <action name="designer_exp_add" class="designerAction" method="addDesignerExp"/>
+        <action name="designer_exp_set" class="designerAction" method="setDesignerExp"/>
+        <action name="designer_exp_get" class="designerAction" method="getDesignerExp"/>
+        <action name="designer_money_add" class="designerAction" method="addDesignerMoney"/>
+        <action name="designer_money_set" class="designerAction" method="setDesignerMoney"/>
+        <action name="designer_money_get" class="designerAction" method="getDesignerMoney"/>
+        <action name="designer_property_get" class="designerAction" method="getAllPropertyDesigner"/>
+        <action name="designer_shift" class="designerAction" method="shiftIntoDesigner"/>
+        <action name="designer_get_code" class="designerAction" method="designerGetCode"/>
+        <action name="designer_bind_citi" class="designerAction" method="designerBindeCiti"/>
+        <action name="designer_bind_citi_acc" class="designerAction" method="designerBindeCitiAcc"/>
+        <action name="get_All_success" class="masterpriseAction" method="getAllSuccess"/>
+        <action name="get_rank_designer" class="designerAction" method="getRankDesigner"/>
+        <!-- Action for Enterprise -->
+        <action name="enterprise_add_action" class="enterpriseAction" method="addNewEnterprise"/>
+        <action name="enterprise_login_action" class="enterpriseAction" method="loginEnterprise"/>
+        <action name="enterprise_email_login_action" class="enterpriseAction" method="loginEnterpriseEmail"/>
+        <action name="enterprise_change_password" class="enterpriseAction" method="changeEnterprisePassword"/>
+        <action name="enterprise_change_info" class="enterpriseAction" method="changeEnterpriseInfo"/>
+        <action name="enterprise_get_info" class="enterpriseAction" method="getPropertyOfEnterprise"/>
+        <action name="enterprise_task_two" class="enterpriseAction" method="shiftTaskToStage2"/>
+        <action name="enterprise_score_masterpiece" class="enterpriseAction" method="giveScoreToMasterprice"/>
+        <action name="enterprise_get_code" class="enterpriseAction" method="enterpriseGetCode"/>
+        <action name="enterprise_bind_citi" class="enterpriseAction" method="enterpriseBindeCiti"/>
+        <action name="enterprise_bind_citi_acc" class="enterpriseAction" method="enterpriseBindeCitiAcc"/>
+        <action name="enterprise_check_citi" class="enterpriseAction" method="enterpriseCheckCiti"/>
+        <!-- Action about Message -->
+        <action name="enterprise_send_action" class="messageAction" method="enterpriseSendMessagetoDesigner"/>
+        <action name="designer_get_message" class="messageAction" method="getAllOfDesignerMessage"/>
+        <action name="enterprise_get_message" class="messageAction" method="getAllOfEnterpriseMessage"/>
+        <action name="designer_send_action" class="messageAction" method="designerSendMessagetoEnterprise"/>
+        <action name="designer_delete_action" class="messageAction" method="deleteMessageDesigner"/>
+        <action name="designer_read_action" class="messageAction" method="readMessageDesigner"/>
+        <action name="enterprise_delete_action" class="messageAction" method="deleteMessageEnterprise"/>
+        <action name="enterprise_read_action" class="messageAction" method="readMessageEnterprise"/>
+        <!-- Action about Task -->
+        <action name="task_add_action" class="taskAction" method="addNewtask"/>
+        <action name="task_change_by_id" class="taskAction" method="changeTaskInfoById"/>
+        <action name="task_change_by_name" class="taskAction" method="changeTaskInfoByName"/>
+        <action name="task_text_change_by_id" class="taskAction" method="changeTaskSubInfoById"/>
+        <action name="task_text_change_by_name" class="taskAction" method="changeTaskSubInfoByName"/>
+        <action name="task_property_get_by_id" class="taskAction" method="getTaskById"/>
+        <action name="task_property_get_by_name" class="taskAction" method="getTaskByName"/>
+        <action name="task_get_all_property_by_id" class="taskAction" method="getTaskAllPropertyById"/>
+        <action name="task_get_all_property_by_name" class="taskAction" method="getTaskAllPropertyByName"/>
+        <action name="task_get_not_stop" class="taskAction" method="getTaskNotStop"/>
+        <action name="task_get_stop" class="taskAction" method="getTaskStop"/>
+        <action name="task_get_orderby_money" class="taskAction" method="getTaskOrderByMoney"/>
+        <action name="task_get_orderby_hot" class="taskAction" method="getTaskOrderByHot"/>
+        <action name="task_get_by_enterprise" class="taskAction" method="getTaskByEnterprise"/>
+        <action name="task_get_by_classify" class="taskAction" method="getTaskByClassify"/>
+        <action name="task_readed_by_designer" class="taskAction" method="designerViewTask"/>
+        <action name="task_get_All" class="taskAction" method="getAllTask"/>
+
+        <!-- Action about Masterprise -->
+        <action name="masterpiece_add_new" class="masterpriseAction" method="addNewMasterprise"/>
+        <action name="masterpiece_change_by_name" class="masterpriseAction" method="changeMasterprisePropertyByName"/>
+        <action name="masterpiece_change_by_id" class="masterpriseAction" method="changeMasterprisePropertyById"/>
+        <action name="masterpiece_get_by_id" class="masterpriseAction" method="getMasterPropertyById"/>
+        <action name="masterpiece_get_by_name" class="masterpriseAction" method="getMasterPropertyByName"/>
+        <action name="masterpiece_get_by_task" class="masterpriseAction" method="getMasterpriseByTask"/>
+        <action name="masterpiece_get_by_designer" class="masterpriseAction" method="getMasterpriceByDesigner"/>
+        <action name="masterpiece_get_by_like" class="masterpriseAction" method="getMasterpriceByLike"/>
+        <action name="masterpiece_get_by_share" class="masterpriseAction" method="getMasterpriceByShare"/>
+        <action name="masterpiece_get_by_view" class="masterpriseAction" method="getMasterpriceByView"/>
+        <action name="masterpiece_like_user" class="masterpriseAction" method="addLikeToMasterprice"/>
+        <action name="masterpiece_share_user" class="masterpriseAction" method="addShareTomasterprice"/>
+        <action name="masterpiece_add_view" class="masterpriseAction" method="addViewRomasterpiece"/>
+        <action name="masterpiece_add_comment" class="masterpriseAction" method="addCommentToMasterprice"/>
+        <action name="designer_get_picture" class="masterpriseAction" method="designer_get_file"/>
+        <action name="masterpiece_add_video" class="masterpriseAction" method="addVidoToMasterprise"/>
+        <action name="get_all_masterpiece" class="masterpriseAction" method="getAllMasterpiece"/>
+        <!-- action for citi api test -->
+
+    </package>
+</struts>

@@ -1,0 +1,309 @@
+*{ margin:0;padding:0;font-family: "Adobe 黑体 Std R";}
+/*去除浏览器默认样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: normal 100% Helvetica, Arial, sans-serif;
+    font-family: "Adobe 黑体 Std R";
+    zoom: 80%;
+    height:1080px;
+}
+
+/*导航栏部分*/
+.nav{
+    display: inline-block;
+    height: 97.92px;
+    font-size: 20px;
+    z-index:100;
+    width:100%;
+    position:fixed;
+    background:white;
+    font-family: "Adobe 黑体 Std R";
+    box-shadow: 2px -8px 10px -9px #5a6268 inset;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:15%;
+    float: left;
+    margin-left: 10%;
+}
+
+.logo img{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-top:6%;
+}
+
+.right {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+    width:25%;
+    float: right;
+    margin-right: 5%;
+}
+
+.right li{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin:0 8% 0 0;
+}
+
+.right li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    text-align: center;
+    padding: 30px 0;
+    text-decoration: none;
+}
+
+.right img{
+    position: relative;
+    display: inline-block;
+    width:25px;
+    height:35px;
+    margin-top:22px;
+}
+
+.right li span{
+    position: relative;
+    display: inline-block;
+    margin:33px 0;
+}
+
+.right li img{
+    margin-right: 0px;
+}
+.right li a:hover:not(.active){
+    color:#2493D3;
+    text-decoration: none;
+}
+.h_app{
+    margin-top: 5px;
+}
+.h_log_in1{
+    left: 50%;
+}
+.h_log_in2{
+    left: -50%;
+}
+.center{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:40%;  /*这里是中间部分占导航栏总长的比例*/
+    margin:0 auto;
+}
+
+.center ul{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    float: left;
+    height:100%;
+    width:100%;
+}
+
+.center li{
+    position: relative;
+    display: inline-block;
+    float:left;
+    margin:0 20px;
+}
+
+.center li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    text-align: center;
+    padding: 30px 0;
+    text-decoration: none;
+}
+.center li a:hover:not(.active){
+    position: relative;
+    display: inline-block;
+    color:#2493D3;
+    border-top: solid;
+    border-color: #2493D3;
+    text-decoration: none;
+}
+
+/*********************************主体部分************************************************/
+.contain{
+    margin-top: 150px;
+    position: absolute;
+    left: 50%;
+    width:80%;
+    height:1000px;
+    background-color: white;
+    transform: translate(-50%);
+}
+.left-box{
+    width:50%;
+    height:100%;
+    float: left;
+}
+.right-box{
+    width:50%;
+    height:100%;
+    float: left;
+    border-left:1px dashed #8d8d8d;
+}
+.title{
+    width:70%;
+    height:8%;
+    border-bottom: 2px solid rgb(220,220,220);
+    text-align: center;
+    margin:50px auto 0 auto;
+}
+.box{
+    text-align: center;
+    width:50%;
+    height:100%;
+    float: left;
+}
+
+.title span{
+    font-size: 32px;
+    font-family: 微软雅黑;
+}
+
+/********************************表单部分***********************************/
+.f-register *:focus{
+    outline: none;
+}
+.f-register{
+    display:inline-block;
+    text-align: center;
+    width:100%;
+    height:auto;
+    margin:50px auto 0 auto;
+    float: left;
+}
+.f-register ul{
+    list-style: none;
+    width:100%;
+    text-align: center;
+}
+
+.item-inner{
+    width:70%;
+    height:90px;
+    margin:0 auto 40px;
+    border:2px solid #8d8d8d;
+    font-size: 26px;
+}
+.item-title{
+    width:30%;
+    height:100%;
+    padding-top: 26px;
+    float: left;
+}
+.item-input{
+    width:70%;
+    height:100%;
+    float: left;
+}
+.item-input input{
+    border:0;
+    width:100%;
+    height:100%;
+    float: left;
+}
+/*.item-input input:focus{*/
+    /*border:1px solid #4ecf79;*/
+/*}*/
+
+/*验证码部分*/
+.inner-left{
+    width:70%;
+    height:100%;
+    float:left;
+    border:solid #8d8d8d;
+    border-width: 2px 0 2px 2px;
+}
+.item-title-yan{
+    width:43%;
+    height:100%;
+    padding-top: 26px;
+    float: left;
+}
+.item-input-yan{
+    width:57%;
+    height:100%;
+    float: left;
+}
+.item-input-yan input{
+    border:0;
+    width:100%;
+    height:100%;
+    float: left;
+}
+/*.item-input-yan input:focus{*/
+     /*border:solid #4ecf79;*/
+     /*border-width: 1px 0 1px 1px;*/
+ /*}*/
+.item-inner>input{
+    width:30%;
+    height:100%;
+    float:left;
+    border:2px solid #4ecf79;
+    color: #4ecf79;
+    background-color: white;
+}
+/***********************确认阅读用户协议**********************/
+.checkbox-wrap{
+    display: inline-block;
+    font-size: 22px;
+    width:70%;
+    height:50px;
+    margin-left:15%;
+}
+.checkbox-wrap input{
+    width:24px;
+    height:24px;
+    transform: translateY(3px);
+}
+.checkbox-wrap a:hover{
+    color:#4ecf79;
+    text-decoration: none;
+}
+/**************************注册按钮********************/
+.register-button{
+    width:70%;
+    height:90px;
+    margin:20px auto 0 15%;
+    color: white;
+    font-size: 26px;
+    background-color: #4ecf79;
+}
+/****************************底部的提示框**********************/
+.bottom{
+    width: 70%;
+    margin:20px auto 0 15%;
+    font-size: 22px;
+}
+.bottom label{
+    float: right;
+    color: #8d8d8d;
+}
+.bottom label a{
+    color: #4ecf79;
+}
+.bottom label a:hover{
+    text-decoration: none;
+}

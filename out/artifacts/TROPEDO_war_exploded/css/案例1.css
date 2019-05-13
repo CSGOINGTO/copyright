@@ -1,0 +1,221 @@
+*{ margin:0;padding:0;font-family: "Adobe 黑体 Std R";}
+/*去除浏览器默认样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: normal 100% Helvetica, Arial, sans-serif;
+    font-family: "Adobe 黑体 Std R";
+    zoom: 80%;
+    height:auto;
+    background-color: rgb(242,242,242);
+}
+
+/*导航栏部分*/
+.nav{
+    display: inline-block;
+    height: 97.92px;
+    font-size: 20px;
+    z-index:100;
+    width:100%;
+    /*position:fixed;*/
+    background:white;
+    font-family: "Adobe 黑体 Std R";
+    box-shadow: 2px -8px 10px -9px #5a6268 inset;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:15%;
+    float: left;
+    margin-left: 10%;
+}
+
+.logo img{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-top:6%;
+}
+
+.right {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+    width:25%;
+    float: right;
+    margin-right: 10%;
+}
+
+.right li{
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    float: right;
+    width:20%;
+}
+
+.right li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    margin: 30px 0;
+    text-decoration: none;
+}
+
+.right li a:hover .two-img{
+    display: block;
+}
+.two-img{
+    display: none;
+}
+
+.right li a:hover:not(.active){
+    color:#2493D3;
+    text-decoration: none;
+}
+
+
+.center{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:40%;  /*这里是中间部分占导航栏总长的比例*/
+    margin:0 auto;
+}
+
+.center ul{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    float: left;
+    height:100%;
+    width:100%;
+}
+
+.center li{
+    position: relative;
+    display: inline-block;
+    float:left;
+    margin:0 20px;
+}
+
+.center li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    text-align: center;
+    padding: 30px 0;
+    text-decoration: none;
+}
+.center li a:hover{
+    position: relative;
+    display: inline-block;
+    color:#2493D3;
+    border-bottom: solid;
+    border-color: #2493D3;
+    text-decoration: none;
+}
+
+.active{
+    color:#2493D3;
+    border-bottom: solid;
+    border-color: #2493D3;
+    text-decoration: none;
+}
+
+
+/******************************************************主体部分************************************************/
+.contain{
+    left: 50%;
+    width:80%;
+    margin:0 auto;
+    height:auto;
+}
+.title{
+    width: 100%;
+    margin:30px auto;
+    padding:30px;
+    background-color: white;
+}
+.content-left{
+    width:68%;
+    height:auto;
+    margin:0 2% 30px 0;
+    float: left;
+    background-color: white;
+    padding:30px;
+}
+
+.content-left h2{
+    font-size: 40px;
+    font-family: 微软雅黑;
+    margin-bottom: 40px;
+}
+
+.content-left h3{
+    font-size: 32px;
+    font-family: 微软雅黑;
+    margin:30px 0;
+}
+
+.content-left p{
+    font-size: 26px;
+    font-family: 微软雅黑;
+}
+
+.content-left img{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.content-left video{
+    width:100%;
+    height:auto;
+}
+
+.content-right{
+    width:30%;
+    height:auto;
+    float: left;
+
+}
+.right-top{
+    background-color: white;
+    width:100%;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.right-top h4{
+    border-bottom:1px solid #bcb9b5;
+    margin-bottom: 20px;
+}
+
+.right-top span{
+    margin:5px;
+    border-radius: 5px;
+    border: 1px solid #bcb9b5;
+    font-size: 20px;
+    font-family: 微软雅黑;
+}
+.right-bottom{
+    background-color: white;
+    width:100%;
+    padding:20px;
+}
+.right-bottom h4{
+    border-bottom:1px solid #bcb9b5;
+    margin-bottom: 20px;
+}
+.right-box img{
+    width:100%;
+}

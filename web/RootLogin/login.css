@@ -1,0 +1,140 @@
+
+.fl {
+    float: left;
+    display: inline;
+}
+.fr {
+    float: right;
+    display: inline;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    clear: both;
+    zoom: 1;
+}
+.txtEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+
+
+.simplePassword-pop{
+	padding:30px 0;
+	text-align:center;
+}
+.warning-img{
+	padding-top:30px;
+}
+.simple-password{
+	padding-top:20px;
+	font-size:18px;
+    color:#333;
+}
+.mdify-tips{
+	padding-top:6px;
+	font-size:14px;
+    color: #999;
+}
+.modify-password-btn{
+	padding:40px 0 0px;
+	text-align: center;
+}
+.modify-password-btn a {
+	width:105px;
+	height:36px;
+	line-height: 36px;
+    background-color:#fff;
+    border: 1px solid #E4E4E4;
+    border-radius:50px;
+    display: inline-block;
+    color:#717985;
+    cursor: pointer;
+    font-weight:400;
+    margin:5px 10px 0;
+    text-decoration: none;
+}
+.modify-password-btn .btn1 {
+    background-color: #02C896;
+    border-color:#02C896;
+    color: #fff;
+}
+.modify-password-btn a:hover{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.revisePassword-tit{
+	padding:0 0 10px 25px;
+	text-align: left;
+	font-size: 18px;
+    color: #333;
+}
+.revisePassword-box{
+	position: relative;
+}
+.revisePassword-list li{
+	margin-top:20px;
+}
+.daily-label {
+    width:90px;
+    padding-right:20px;
+    text-align: right;
+    color: #333;
+    display:block;
+    font-size: 14px;
+    line-height:40px;
+}
+.daily-input-inline {
+    width:220px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border:#f2f2f2 1px solid;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+.daily-input-inline .layui-input{
+    height:40px;
+    width:180px;
+    padding-right:20px;
+}
+.revisePassword-wrap .layui-layer-setwin .layui-layer-close{
+	width:22px;
+	height:22px;
+	background: url(https://image.zhihuishu.com/testzhs/ablecommons/demo/201612/689dc51e10e14338aba96e7caa8d3be4.png) -107px 0 no-repeat;
+	top:15px;
+	right:5px;
+}
+.revisePassword-wrap .layui-layer-setwin .layui-layer-close:hover{
+	background-position: -75px 0;
+}
+.empty-ico{
+	width:18px;
+	height:18px;
+	display: block;
+	cursor: pointer;
+	background: url(http://image.zhihuishu.com/zhs/able-commons/demo/201806/d4a6053ac1174ab8a976f9cadaad4960.png) no-repeat;
+	position: absolute;
+	right:10px;
+	top:11px;
+	display:none;
+}
+.error-password{
+	position: absolute;
+	bottom:-25px;
+	left:110px;
+	font-size: 14px;
+    color: #FF6060;
+/*     display:none; */
+}

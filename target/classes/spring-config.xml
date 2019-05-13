@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <!--Source of data-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/data_of_users" />
+        <property name="username" value="fuchuanpu" />
+        <property name="password" value="718301" />
+    </bean>
+
+    <!-- SessionFactory needs source -->
+    <bean id="secessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <!-- all of the persistence entities should be config at here -->
+                <value>net.Ken365X.Entity.Root</value>
+                <value>net.Ken365X.Entity.Task</value>
+                <value>net.Ken365X.Entity.Masterprise</value>
+                <value>net.Ken365X.Entity.Enterprise</value>
+                <value>net.Ken365X.Entity.Designer</value>
+                <value>net.Ken365X.Entity.Message</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Hibernate need transaction management -->
+    <!-- Spring AOP and AspectJ AOP -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut expression="execution(* net.Ken365X.Dao.*.*(..))" id="txPointcut"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+    </aop:config>
+
+    <!-- shriofilter -->
+    <bean id="shriofilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="filterChainDefinitions">
+            <value>
+                /* = anon
+            </value>
+        </property>
+    </bean>
+
+    <!-- Shiro manager -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="tropedoRealm"/>
+    </bean>
+
+
+    <!-- Shiro Realms -->
+    <bean id="tropedoRealm" class="net.Ken365X.Security.TROPEDORealm">
+        <property name="rootDao" ref="rootDao"/>
+    </bean>
+
+    <!--Daos-->
+    <bean id="rootDao" class="net.Ken365X.Dao.RootDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+    <bean id="designerDao" class="net.Ken365X.Dao.DesignerDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+    <bean id="enterpriseDao" class="net.Ken365X.Dao.EnterpriseDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+    <bean id="messageDao" class="net.Ken365X.Dao.MessageDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+    <bean id="taskDao" class="net.Ken365X.Dao.TaskDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+    <bean id="masterpriseDao" class="net.Ken365X.Dao.MasterpriseDaoImp">
+        <property name="sessionFactory" ref="secessionFactory"/>
+    </bean>
+
+    <!--service-->
+    <bean id="rootService" class="net.Ken365X.Service.RootServiceImp">
+        <property name="rootDao" ref="rootDao"/>
+    </bean>
+    <bean id="fileService" class="net.Ken365X.Service.FileServiceImp" scope="prototype">
+        <property name="masterpriseDao" ref="masterpriseDao"/>
+        <property name="taskDao" ref="taskDao"/>
+    </bean>
+    <bean id="designerService" class="net.Ken365X.Service.DesignerServiceImp">
+        <property name="designerDao" ref="designerDao"/>
+        <property name="masterpriseDao" ref="masterpriseDao"/>
+    </bean>
+    <bean id="enterpriseService" class="net.Ken365X.Service.EnterpriseServiceImp">
+        <property name="enterpriseDao" ref="enterpriseDao"/>
+        <property name="masterpriseDao" ref="masterpriseDao"/>
+        <property name="taskDao" ref="taskDao"/>
+    </bean>
+    <bean id="messageService" class="net.Ken365X.Service.MessageServiceImp">
+        <property name="enterpriseDao" ref="enterpriseDao"/>
+        <property name="designerDao" ref="designerDao"/>
+        <property name="messageDao" ref="messageDao"/>
+    </bean>
+    <bean id="taskService" class="net.Ken365X.Service.TaskServiceImp">
+        <property name="taskDao" ref="taskDao"/>
+        <property name="enterpriseDao" ref="enterpriseDao"/>
+    </bean>
+    <bean id="masterpriseService" class="net.Ken365X.Service.MasterpriseServiceImp">
+        <property name="designerDao" ref="designerDao"/>
+        <property name="masterpriseDao" ref="masterpriseDao"/>
+        <property name="taskDao" ref="taskDao"/>
+    </bean>
+    <bean id="citiService" class="net.Ken365X.Service.CitiServiceImp">
+        <property name="designerDao" ref="designerDao"/>
+        <property name="enterpriseDao" ref="enterpriseDao"/>
+    </bean>
+
+    <!--Action-->
+    <bean id="rootAction" class="net.Ken365X.Action.RootAction" scope="prototype">
+        <property name="rootService" ref="rootService"/>
+    </bean>
+    <bean id="fileAction" class="net.Ken365X.Action.FileAction" scope="prototype">
+        <property name="fileService" ref="fileService"/>
+        <property name="masterpriseService" ref="masterpriseService"/>
+    </bean>
+    <bean id="designerAction" class="net.Ken365X.Action.DesignerAction" scope="prototype">
+        <property name="designerService" ref="designerService"/>
+        <property name="citiService" ref="citiService"/>
+        <property name="masterpriseService" ref="masterpriseService"/>
+    </bean>
+    <bean id="enterpriseAction" class="net.Ken365X.Action.EnterpriseAction" scope="prototype">
+        <property name="enterpriseService" ref="enterpriseService"/>
+        <property name="citiService" ref="citiService"/>
+    </bean>
+    <bean id="messageAction" class="net.Ken365X.Action.MessageAction" scope="prototype">
+        <property name="messageService" ref="messageService"/>
+    </bean>
+    <bean id="taskAction" class="net.Ken365X.Action.TaskAction" scope="prototype">
+        <property name="taskService" ref="taskService"/>
+    </bean>
+    <bean id="masterpriseAction" class="net.Ken365X.Action.MasterpriseAction" scope="prototype">
+        <property name="masterpriseService" ref="masterpriseService"/>
+        <property name="fileService" ref="fileService"/>
+    </bean>
+</beans>

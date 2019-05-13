@@ -1,0 +1,345 @@
+*{ margin:0;padding:0;font-family: "Adobe 黑体 Std R";}
+/*去除浏览器默认样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, a/* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: normal 100% Helvetica, Arial, sans-serif;
+    font-family: "Adobe 黑体 Std R";
+    width:100%;
+    height:auto;
+    background-color: rgba(222, 225, 225, 0.5);
+    _zoom: 80%;
+}
+.nav{
+    display: inline-block;
+    height: 97.92px;
+    font-size: 20px;
+    z-index:100;
+    width:100%;
+    position:fixed;
+    background:white;
+    font-family: "Adobe 黑体 Std R";
+    box-shadow: 2px -8px 10px -9px #5a6268 inset;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:15%;
+    float: left;
+    margin-left: 10%;
+}
+
+.logo img{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-top:6%;
+}
+
+.right {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+    width:25%;
+    float: right;
+    margin-right: 5%;
+}
+
+.right li{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin:0 8% 0 0;
+}
+
+li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    text-align: center;
+    padding: 30px 0;
+    text-decoration: none;
+}
+
+.right img{
+    position: relative;
+    display: inline-block;
+    width:25px;
+    height:35px;
+    margin-top:22px;
+}
+
+.right li span{
+    position: relative;
+    display: inline-block;
+    margin:33px 0;
+}
+
+.right li a:hover:not(.active){
+    color:#2493D3;
+}
+.h_app{
+    margin-top: 5px;
+}
+.h_log_in1{
+    left: 50%;
+}
+.h_log_in2{
+    left: -50%;
+}
+.center{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:40%;  /*这里是中间部分占导航栏总长的比例*/
+    margin:0 auto;
+}
+
+.center ul{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    float: left;
+    height:100%;
+    width:100%;
+}
+
+.center li{
+    position: relative;
+    display: inline-block;
+    float:left;
+    margin:0 20px;
+}
+
+.center li a:hover:not(.active){
+    position: relative;
+    display: inline-block;
+    color:#2493D3;
+    border-top: solid;
+    border-color: #2493D3;
+}
+
+/************************************以下是主体部分************************************/
+.contain{
+    margin-top: 150px;
+    position: absolute;
+    left: 50%;
+    width:80%;
+    height:640px;
+    transform: translate(-50%);
+    background-color: rgba(249, 249, 249, 0.7);
+    -moz-box-shadow:0px -4px 9px #C2C2C2; -webkit-box-shadow:0px -4px 9px #C2C2C2; box-shadow:0px -4px 9px #C2C2C2;
+}
+.contain img{
+    height:95%;
+    width:auto;
+    float:left;
+    margin:2.5% 0 2.5% 1%;
+    display: inline-block;
+}
+.main-content{
+    width: 40%;
+    height:90%;
+    float: right;
+    margin: 2% 2%;
+    background-color: white;
+}
+.main-content nav{
+    width:96%;
+    height:auto;
+    margin:30px auto;
+    border-bottom: 1px solid #88919a;
+}
+.main-content nav ul{
+    list-style: none;
+    font-size: 20px;
+}
+.main-content nav ul li{
+    display: inline-block;
+    width:30%;
+    text-align: center;
+}
+.main-content nav ul li a{
+    padding:0 0 15px 0;
+}
+.active{
+    color: #4ecf79;
+    border-bottom: 2px solid #4ecf79;
+}
+.images{
+    width:100%;
+    height:40px;
+}
+.images img{
+    display: inline-block;
+    width:48%;
+    float:left;
+    margin:0 1%;
+}
+.images-font{
+    overflow: auto;
+    font-size: 20px;
+    color: #d6d6d8;
+}
+.images-font span{
+    text-align: center;
+    width:48%;
+    float:left;
+    margin:10px 1%;
+}
+form{
+    width:80%;
+    height:200px;
+    margin:0 auto;
+}
+form input{
+    width:100%;
+    height:62px;
+    margin:20px auto;
+    border: 1px solid #d6d6d8;
+    font-size: 23px;
+    color: #d9dde0;
+}
+form input[type="text"]{
+    width:60%;
+    float: left;
+}
+form input[type="button"]{
+    width:35%;
+    float: right;
+    background-color: #333333;
+}
+/**************************************************页脚部分***********************************************************/
+.foot{
+    z-index: 100;
+    display: inline-block;
+    margin-top: 40px;
+    height: 480px;
+    width: 100%;
+}
+.on_foot{
+    display: inline-block;
+    height: 60%;
+    width: 100%;
+    background: rgb(42, 42, 42);
+    border: none;
+}
+.on_foot a{
+    padding: 0;
+    color: #c4c4c4;
+    font-size: 14px;
+}
+
+.foot_part1{
+    display: inline-block;
+    height: 73%;
+    color: #c4c4c4;
+    margin: 4% 5% 0 37%;
+}
+.foot_title1{
+    display: inline-block;
+    /*width: 100%;*/
+    margin: 0 5px 8% 0;
+}
+.foot_part1 p{
+    text-align: center;
+    font-weight: bold;
+}
+.foot_part1 ul{
+    display: inline-block;
+    list-style: none;
+    width: 100%;
+    height: 65.7%;
+}
+.foot_part1 li{
+    position: relative;
+    display:block;
+    margin: 5% 0 2% 0;
+}
+
+.v_line{
+    display: inline;
+    border: solid #bfbfbf;
+    margin-top: 10%;
+    padding-top:8%;
+    padding-bottom:1%;
+    border-width: 0 1px 0 0;
+    line-height: 150%;
+}
+.on_foot a:hover{
+    color:#7ab6f4;
+    text-decoration: none;
+}
+
+.low_foot a{
+    padding: 0;
+    color: #c4c4c4;
+    font-size: 14px;
+}
+.foot_part2{
+    position: relative;
+    display: inline-block;
+    height: 73%;
+    color: #c4c4c4;
+    top: 6px;/*在chorme中没有对其*/
+    margin: 0 0 0 7%;
+}
+.foot_part2 ul{
+    list-style: none;
+}
+.foot_part2 a{
+    margin: 10% 0 0 2%;
+    font-size: 13px;
+}
+.foot_part2 p{
+    margin: 0 0 20% 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.low_foot{
+    position:relative;
+    display: inline-block;
+    height: 40%;
+    width: 100%;
+    top: -1%;
+    background: rgb(14, 14, 14);
+    border: none;
+}
+
+.low_foot ul{
+    list-style: none;
+    margin: 6% 0 0 25%;
+}
+.low_foot li{
+    display: inline-block;
+    width: 6%;
+    height: 8%;
+    margin: 0;
+}
+.low_foot a{
+    padding: 0;
+    font-size: 14px;
+}
+.low_foot a:hover{
+    color: #7ab6f4;
+    text-decoration: none;
+}
+.v_line2{
+    text-align: center;
+    width:15%;
+    border: solid #707070;
+    border-width: 0 1px 0 0;
+    padding:3px;
+    margin-left:5px;
+}

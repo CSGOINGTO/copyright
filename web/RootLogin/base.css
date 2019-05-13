@@ -1,0 +1,48 @@
+@charset "utf-8";
+/*CSS reset 2015-6-1*/
+html,body,div,strong,span,form,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,table,tr,td,th,tbody,thead,input,textarea,select,fieldset,p,hr{margin:0;padding:0;}
+body{line-height:16px;color:#000;font-size:12px;font-family: "Arial","Hiragino Sans GB",微软雅黑,"Helvetica","sans-serif";font-weight:normal;}
+table{border-collapse:collapse;border-spacing:0}
+filedset,img{border:0;vertical-align:middle;-ms-interpolation-mode:bicubic}
+address,em,i,caption,cite,code,th{font-weight:normal;font-style:normal}
+li{list-style:none;vertical-align:bottom;list-style-type:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%}
+a{text-decoration:none;color:#00c986;outline:none;}
+a:hover{text-decoration:underline;color:#00c986;}
+button,input,select,textarea{margin:0;border:0;font-weight:inherit;vertical-align:baseline;*vertical-align:middle;outline:none}
+button,input[type="button"],input[type="text"],select,textarea{background:none}
+button,input{line-height:normal}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:none}
+button[disabled],input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+input::-ms-clear { display: none; }
+textarea{resize:none;vertical-align:top}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc}
+div{margin:0 auto}
+/* Float & Clear */
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.clearfix{clear:both;zoom:1}
+.txtEllipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+/*nano*/
+.nano {position : relative;overflow:hidden;}
+.nano .content {position: absolute;overflow: auto;overflow-x: hidden;top: 0;right: 0;bottom: 0;left: 0;background:none;}
+.nano .content:focus {outline: thin dotted;}
+.nano .content::-webkit-scrollbar {visibility: hidden;}
+.has-scrollbar .content::-webkit-scrollbar {visibility: visible;}
+#Tabs_2 .nano > .pane {height:405px;background : rgba(0,0,0,.25);position: absolute;width: 10px;right: 0;top: 0;bottom: 0;visibility : hidden\9; /* Target only IE7 and IE8 with this hack */opacity: .01; 
+-webkit-transition: .2s;-moz-transition: .2s;-o-transition: .2s;transition: .2s;-moz-border-radius: 5px;-webkit-border-radius : 5px;  border-radius: 5px;}
+.nano > .pane {background:#ccc;position: absolute;width: 6px;right: 0;top: 0;bottom: 0;visibility : hidden\9; /* Target only IE7 and IE8 with this hack */opacity: .01; -webkit-transition: .2s;-moz-transition       : .2s;
+-o-transition: .2s;
+transition: .2s;
+}
+.nano > .pane > .slider {background:#008573;position: relative;margin: 0 1px;}
+.nano:hover > .pane, .pane.active, .pane.flashed {visibility : visible\9; /* Target only IE7 and IE8 with this hack */opacity: 0.99;}
+
+
+

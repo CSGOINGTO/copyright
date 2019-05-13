@@ -1,0 +1,440 @@
+﻿*{ margin:0;padding:0;font-family: "Adobe 黑体 Std R";}
+/*去除浏览器默认样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: normal 100% Helvetica, Arial, sans-serif;
+    font-family: "Adobe 黑体 Std R";
+	width:1080px;
+    _zoom: 80%;
+}
+.nav{
+    display: inline-block;
+    height: 97.92px;
+    font-size: 20px;
+    z-index:100;
+    width:100%;
+    position:fixed;
+    background:white;
+    font-family: "Adobe 黑体 Std R";
+    box-shadow: 2px -8px 10px -9px #5a6268 inset;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:15%;
+    float: left;
+    margin-left: 10%;
+}
+
+.logo img{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-top:6%;
+}
+
+.right {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+    width:25%;
+    float: right;
+    margin-right: 5%;
+}
+
+.right li{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin:0 8% 0 0;
+}
+
+li a{
+    position: relative;
+    display: block;
+    color:#6c6c6c;
+    text-align: center;
+    padding: 30px 0;
+    text-decoration: none;
+}
+
+.right img{
+    position: relative;
+    display: inline-block;
+    width:25px;
+    height:35px;
+    margin-top:22px;
+}
+
+.right li span{
+    position: relative;
+    display: inline-block;
+    margin:33px 0;
+}
+
+.right li a:hover:not(.active){
+    color:#2493D3;
+}
+.h_app{
+    margin-top: 5px;
+}
+.h_log_in1{
+    left: 50%;
+}
+.h_log_in2{
+    left: -50%;
+}
+.center{
+    position: relative;
+    display: inline-block;
+    height:100%;
+    width:40%;  /*这里是中间部分占导航栏总长的比例*/
+    margin:0 auto;
+}
+
+.center ul{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    float: left;
+    height:100%;
+    width:100%;
+}
+
+.center li{
+    position: relative;
+    display: inline-block;
+    float:left;
+    margin:0 20px;
+}
+
+.center li a:hover:not(.active){
+    position: relative;
+    display: inline-block;
+    color:#2493D3;
+    border-top: solid;
+    border-color: #2493D3;
+}
+/************************************以下是主体部分************************************/
+.main_body{
+    position: absolute;
+    display: block;
+    top:98px;
+    height: 888px;
+    width: 100%;
+    background-color: rgba(222, 225, 225, 0.5);
+}
+.main_content{
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: 70%;
+    background-color: rgba(249, 249, 249, 0.7);
+    margin: 5% 0 0 10%;
+    -moz-box-shadow:0px -4px 9px #C2C2C2; -webkit-box-shadow:0px -4px 9px #C2C2C2; box-shadow:0px -4px 9px #C2C2C2;
+}
+.bg_img{
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 60%;
+    background:url("../images/head_portrait.png");
+    background-size: 100% 100%;
+    float: left;
+}
+.f_login{
+    position: absolute;
+    display: inline-block;
+    height: 85%;
+    width: 35%;
+    background-color: #ffffff;
+    moz-box-shadow:0px 0px 9px #C2C2C2; -webkit-box-shadow:0px 0px 9px #C2C2C2; box-shadow:0px 0px 9px #C2C2C2;
+    float: left;
+    left: 60%;
+    top: 7%;
+}
+.f_input1{
+    position: absolute;
+    display: inline-block;
+    margin: 8% 0 0 10%;
+    padding-left: 4%;
+    width: 75%;
+    height: 10.4%;
+    font-size: 20px;
+    color: #000000;
+    border: rgba(122, 132, 142, 0.51) 1.4px solid;
+}
+.f_input2{
+    position: absolute;
+    display: inline-block;
+    margin: 26% 0 0 10%;
+    padding-left: 4%;
+    width: 75%;
+    height: 10.4%;
+    font-size: 20px;
+    color: #000000;
+    border: rgba(122, 132, 142, 0.51) 1.4px solid;
+}
+
+.checkbox-wrap{
+    position: absolute;
+    display: inline-block;
+    margin: 45% 0 0 10%;
+    width: 50%;
+    height: 40%;
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"]+label {
+    display: inline-block;
+    width: 48%;
+    margin-top: 0px;
+    margin-left: 5px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+}
+
+label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #EEE;
+    vertical-align: middle;
+    /*-webkit-border-radius: 50%;*/
+    margin-right: 5px;
+    -webkit-box-sizing:border-box;
+    -webkit-transition:background ease-in .8s
+}
+
+input[type="checkbox"]:checked+label::before {
+    background-color: rgb(53, 183, 111);
+    border: 3px #EEEEEE solid;
+}
+
+.find_password{
+    position: relative;
+    display: inline-block;
+    margin: 45% 0 0 76%;
+    color: #6EBF84;
+    font-size: 16px;
+    text-decoration: none
+}
+.btn_login{
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: 10.4%;
+    background-color: rgba(17, 17, 17, 0.95);
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin: 4% 0 0 10%;
+}
+.register{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #bcb9b5;
+    margin: 4% 0 0 60%;
+
+}
+.register p{
+    display: inline-block;
+    color: #6EBF84;
+}
+.other_login{
+    position: relative;
+    display: inline-block;
+    margin: 5% 0 0 10%;
+    width: 80%;
+    height: 10%;
+    text-align: center;
+}
+.line {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    border-top: 1px solid #ccc;
+}
+.others{
+    position: relative;
+    display: inline-block;
+    margin: 0 5% 0 5% ;
+    color: #686868;
+    top: 5%;
+}
+.others_img{
+    position: relative;
+    display: inline-block;
+    height: 6%;
+    width: 80%;
+    margin: 0 0 0 10%;
+}
+.login_qq{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 8%;
+    background: url("../images/QQ_g.png");
+    background-size: 100% 100%;
+    margin-left: 18%;
+}
+.login_qq:hover{
+    background: url("../images/QQ.png");
+    background-size: 100% 100%;
+}
+.login_wechat{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+    background: url("../images/wechat_g.png");
+    background-size: 100% 100%;
+    margin-left: 20%;
+}
+.login_wechat:hover{
+    background: url("../images/wechat.png");
+    background-size: 100% 100%;
+}
+.login_sina{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 11%;
+    background: url("../images/weibo_g.png");
+    background-size: 100% 100%;
+    margin-left: 16%;
+}
+.login_sina:hover{
+    background: url("../images/weibo.png");
+    background-size: 100% 100%;
+}
+/*尾栏*/
+.foot{
+    position:absolute;
+    display: inline-block;
+    height: 480px;
+    width: 100%;
+    margin-top: 53.7%;
+}
+.on_foot{
+    position:relative;
+    display: inline-block;
+    height: 60%;
+    width: 100%;
+    background: rgb(42, 42, 42);
+    border: none;
+}
+.on_foot a{
+    padding: 0;
+    color: #c4c4c4;
+    font-size: 14px;
+}
+.low_foot{
+    position:relative;
+    display: inline-block;
+    height: 40%;
+    width: 100%;
+    top: -1%;
+    background: rgb(14, 14, 14);
+    border: none;
+}
+.foot_part1{
+    position: relative;
+    display: inline-block;
+    height: 73%;
+    color: #c4c4c4;
+    margin: 4% 5% 0 37%;
+}
+.foot_title1{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    left: 1%;
+    margin: 0 0 8% 0;
+}
+.foot_part1 p{
+    text-align: center;
+    font-weight: bold;
+}
+.foot_part1 ul{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    width: 100%;
+    height: 65.7%;
+}
+.foot_part1 li{
+    position: relative;
+    display:block;margin: 5% 0 2% 0;
+}
+.v_line{
+    display: inline;
+    border: solid #bfbfbf;
+    margin-top: 10%;
+    padding-top:8%;
+    padding-bottom:1%;
+    border-width: 0 1px 0 0;
+    line-height: 150%;
+}
+.foot_part2{
+    position: relative;
+    display: inline-block;
+    height: 73%;
+    color: #c4c4c4;
+    top: 6px;/*在chorme中没有对其*/
+    margin: 0 0 0 7%;
+}
+.foot_part2 ul{
+    list-style: none;
+}
+.foot_part2 a{
+    margin: 10% 0 0 2%;
+    font-size: 13px;
+}
+.foot_part2 p{
+    margin: 0 0 20% 0;
+    text-align: center;
+    font-weight: bold;
+}
+.low_foot{
+    position:relative;
+    display: inline-block;
+    height: 40%;
+    width: 100%;
+    top: -1%;
+    background: rgb(14, 14, 14);
+    border: none;
+}
+.low_foot ul{
+    list-style: none;
+    margin: 6% 0 0 25%;
+}
+.low_foot li{
+    display: inline-block;
+    width: 6%;
+    height: 8%;
+    margin: 0;
+}
+.low_foot a{
+    padding: 0;
+    font-size: 14px;
+}
+.v_line2{
+    border: solid #707070;
+    border-width: 0 1px 0 0;
+}
