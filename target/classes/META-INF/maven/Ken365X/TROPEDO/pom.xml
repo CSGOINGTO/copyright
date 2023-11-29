@@ -25,7 +25,7 @@
         <!-- UTF-8 Encoding  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Framework versions  -->
-        <struts.version>2.5.10</struts.version>
+        <struts.version>2.5.31</struts.version>
         <spring.version>5.0.7.RELEASE</spring.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
         <shiro.version>1.4.0</shiro.version>
